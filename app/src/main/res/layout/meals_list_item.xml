@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="favourite"
+            type="Boolean" />
+        <variable
+            name="meal"
+            type="com.example.eatanddrink.model.meal.Meal" />
+        <variable
+            name="favMealClickListener"
+            type="com.example.eatanddrink.adapter.meal.MealClickListener" />
+        <variable
+            name="MealX"
+            type="com.example.eatanddrink.model.meal.MealX" />
+
+        <variable
+            name="mealClickListener"
+            type="com.example.eatanddrink.adapter.meal.MealXClickListener" />
+    </data>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_selected_movie_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/parent_view"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:onClick="@{()-> favourite?favMealClickListener.onClick(meal,image):mealClickListener.onClick(MealX,image)}"
+
+                >
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:categoryImage="@{favourite?meal.strMealThumb:MealX.strMealThumb}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/meal_image" />
+                <View
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/title"
+                    android:background="@color/overlay_dark_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:maxLines="2"
+                    android:gravity="center"
+                    android:text="@{favourite?meal.strMeal:MealX.strMeal}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@android:color/white"
+                    app:fontFamily="sans-serif-medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_border"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{()->favourite?favMealClickListener.onClick(meal,fav):mealClickListener.onClick(MealX,fav)}"
+                android:contentDescription="@string/favourite_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

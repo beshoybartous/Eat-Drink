@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="AppTheme" parent="BaseTheme" />
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:dialogTheme">@style/Dialog.Theme</item>
+    </style>
+    <style name="Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="Text.Yellow" parent="@style/AppTheme">
+        <item name="android:textColor">@color/text_shadow</item>
+        <item name="android:shadowColor">@color/text_shadow</item>
+        <item name="contentScrim">@color/blue_300</item>
+        <item name="android:statusBarColor">@color/blue_500</item>
+    </style>
+</resources>

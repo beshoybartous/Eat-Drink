@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mealsFragment">
+
+    <fragment
+        android:id="@+id/mealsFragment"
+        android:name="com.example.eatanddrink.ui.meal.MealsFragment"
+        android:label="fragment_meals"
+        tools:layout="@layout/fragment_meals" >
+        <action
+            android:id="@+id/action_mealsFragment_to_mealDetailFragment"
+            app:destination="@id/mealDetailFragment" />
+        <action
+            android:id="@+id/action_mealsFragment_self"
+            app:destination="@id/mealsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailFragment"
+        android:name="com.example.eatanddrink.ui.meal.MealDetailFragment"
+        android:label="MealDetailFragment" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="-1" />
+        <argument
+            android:name="random"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="favourite"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/drinksFragment"
+        android:name="com.example.eatanddrink.ui.drink.DrinksFragment"
+        android:label="DrinksFragment" >
+        <action
+            android:id="@+id/action_drinksFragment_to_drinkDetailFragment"
+            app:destination="@id/drinkDetailFragment" />
+        <action
+            android:id="@+id/action_drinksFragment_self"
+            app:destination="@id/drinksFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/drinkDetailFragment"
+        android:name="com.example.eatanddrink.ui.drink.DrinkDetailFragment"
+        android:label="DrinkDetailFragment" >
+        <argument
+            android:name="id"
+            app:argType="string"
+            android:defaultValue="-1" />
+        <argument
+            android:name="random"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="favourite"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.eatanddrink.ui.FavouriteFragment"
+        android:label="FavouriteFragment" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_drinkDetailFragment"
+            app:destination="@id/drinkDetailFragment" />
+        <action
+            android:id="@+id/action_favouriteFragment_to_mealDetailFragment"
+            app:destination="@id/mealDetailFragment" />
+        <action
+            android:id="@+id/action_favouriteFragment_self"
+            app:destination="@id/favouriteFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

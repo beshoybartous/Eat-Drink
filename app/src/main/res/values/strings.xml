@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">EatDrink</string>
+    <string name="eat">Eat</string>
+    <string name="drink">Drink</string>
+    <string name="favourite">Favourite</string>
+    <string name="don_t_know_what_to_eat_we_pick_for_you">Don\'t Know what to eat, we pick for you.</string>
+    <string name="don_t_know_what_to_drink_we_pick_for_you">Don\'t Know what to drink, we pick for you.</string>
+    <string name="drink_image">Drink Image</string>
+    <string name="meal_image">Meal Image</string>
+
+    <string name="favourite_button">Favourite Button</string>
+    <string name="type">Type</string>
+    <string name="category">Category</string>
+    <string name="instructions">Instructions</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="measures">Measures</string>
+    <string name="background_image">background image</string>
+    <string name="let_s_drink">Let\'s Drink</string>
+    <string name="let_s_eat">Let\'s Eat</string>
+    <string name="try_something_else">Try something else</string>
+    <string name="favourite_meals">Favourite Meals</string>
+    <string name="favourite_drinks">Favourite Drinks</string>
+    <string name="country">Country</string>
+    <string name="ingredient_image">ingredient image</string>
+
+</resources>
